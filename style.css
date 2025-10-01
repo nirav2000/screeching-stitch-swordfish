@@ -1,0 +1,152 @@
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFEBEB; /* Light pink */
+    margin: 0;
+    padding: 20px;
+}
+
+#grandStaff {
+    border: 1px solid #dcdcdc;
+    width: 600px;
+    height: 200px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+button, .note-button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF6F61; /* Warm pink */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, .note-button:hover {
+    background-color: #FF4A4A; /* Darker warm pink */
+}
+
+#scorecard, #feedback, #statistics {
+    font-size: 20px;
+    margin-bottom: 0px;
+    width: 50%;
+    text-align: left;
+    
+    padding:16px 7px;
+}
+#feedback {
+  width:100%;
+}
+
+.container {
+    display: flex;
+    /* align-items: center; */
+    margin-bottom: 10px;
+    width: 600px;
+    background:#FF6F61;
+    color:white;
+}
+
+#modeSelector, #userProfiles {
+    background-color: #FFE4E4; /* Soft pink */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 570px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#modeSelector label, #userProfiles label {
+    margin-right: 10px;
+}
+
+#badges {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    width: 50px;
+    height: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 600px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #FF8A8A; /* Darker pink */
+    color: white;
+}
+
+#keyboard {
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 100px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+.key {
+    border: 1px solid #000;
+    box-sizing: border-box;
+    /* padding-top: 75px; */
+}
+
+.white {
+    background-color: white;
+    width: 11.11%;
+    height: 100%;
+    padding-top:75px;
+    padding-left:5px;
+}
+
+.black {
+    background-color: black;
+    width: 5%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+}
+
+#timerCanvas {
+    width: 100px;
+    border-radius: 10%;
+    /* margin-left: 70%; */
+   
+    background-color: transparent; /* Ensures background doesn't alter the circle shape */
+
+}
+
+#noteChart, #playbackChart, #learningChart {
+    width: 600px; /* Same width as others */
+    height: 400px;
+}
+
+
+#iconButtons {
+    display: flex;    
+}
+
+.statsButtons {
+    padding:0px 7px;
+    margin:1px 1px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Note Trainer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@5.0.0-alpha.4/build/cjs/vexflow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.37/Tone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+</head>
+<body>
+    <div id="userProfiles">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" placeholder="Your name">
+        <button id="saveProfile">Save Profile</button>
+        <button id="clearProfile" style="display:none;">Clear Profile</button>
+         <button id="loadProfile">Load Profile</button> <!-- Button for loading profile -->
+    <div id="feedback"></div>
+    </div>
+     
+
+    <div id="modeSelector">
+        <label for="gameMode">Select Game Mode:</label>
+        <select id="gameMode">
+            <option value="normal">Normal</option>
+            <option value="timed">Timed Challenge</option>
+        </select>
+
+        <label for="customTime">Set Custom Time (seconds):</label>
+        <input type="number" id="customTime" min="5" max="60" value="15" style="width: 60px;">
+    </div>
+
+    <div class="container" style="display: flex; justify-content: right;">
+       
+        <div id="scorecard">Score: 0</div>
+         <canvas id="timerCanvas"></canvas> 
+         <div id="iconButtons" >
+            <button class="statsButtons" id="downloadData" title="Download Data">
+                <i class="fas fa-file-download"></i>
+            </button>
+            <button class="statsButtons" id="importData" title="Import Data">
+                <i class="fas fa-file-upload"></i>
+                <input type="file" id="importFile" accept=".json" style="display: none;" />
+            </button>
+            
+            <button class="statsButtons" id="playbackButton" title="Playback Recorded Notes">
+                <i class="fas fa-play-circle"></i>
+            </button>
+            <button class="statsButtons" id="viewStatisticsButton" title="View Statistics">
+                <i class="fas fa-chart-line"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div id="grandStaff"></div>
+    <div id="keyboard"></div> 
+    <div id="noteButtons" style="display: none;"></div>
+    <div id="chartContainer">
+        <canvas id="noteChart"></canvas>
+    </div>
+    <div id="feedback"></div>
+    <div id="statistics"></div>
+    <div id="playbackChartContainer">
+        <canvas id="playbackChart"></canvas>
+    </div>
+    <div id="learningChartContainer">
+        <canvas id="learningChart"></canvas>
+    </div>
+    <!-- <button class="statsButtons" id="downloadData">Download Data</button>
+    <button class="statsButtons" id="playbackButton">Playback Recorded Notes</button>
+    <button class="statsButtons" id="viewStatisticsButton">View Statistics</button> -->
+
+   
+
+
+
+    <div id="badges"></div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Note</th>
+                <th>Attempts</th>
+                <th>Correct</th>
+                <th>Quickest Time (s)</th>
+                <th>Average Time (s)</th>
+                <th>Slowest Time (s)</th>
+                <th>Learning Factor</th>
+            </tr>
+        </thead>
+        <tbody id="statisticsTableBody">
+            <!-- Statistics will be filled here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
